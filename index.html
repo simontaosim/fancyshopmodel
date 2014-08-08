@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理员首页</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='index.css' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+  </head>
+  <body>
+   <div id='top'>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">FancyShop管理系统V1.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a  href="add_good.html" target='main'>添加新商品</a></li>
+        <li><a href="order_list.html" target='main'>查看未处理订单</a></li>
+         <li><a href="sitesetting.html" target='main'>网站设置</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="搜索内容">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style='display: inline-block;'>
+            <div  style='bottom: 5px; float: right; position: relative; z-index: 30; '>
+             <small class="badge" style="color: #F75C2F;">112</small>
+             </div>
+            <span style=' font-weight: bolder;'>信息 </a>
+          <ul class="dropdown-menu " role="menu">
+            <li><a href="personal_info.html" target='main'>新的订单<span class="badge">14</span></a></li>
+            <li><a href="#">新的审批请求<span class="badge">14</span></a></li>
+            <li><a href="#">最近被分享的商品<span class="badge">14</span></a></li>
+            <li><a href="#">站内小纸条<span class="badge">14</span></a></li>
+            <li class="divider"></li>
+            <li><a href="lgoin.html">查看所有新消息<span class="badge">14</span></a></li>
+            <li><a href="lgoin.html">向指定用户发小纸条<span class="badge">14</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">超级管理员，simon <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="personal_info.html" target='main'>个人信息管理</a></li>
+            <li><a href="#">新建员工</a></li>
+            <li class="divider"></li>
+            <li><a href="lgoin.html">登出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <br><br><br><br>
+</div>
+<div class='container' id='left'>
+<div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a  href="main.html" target='main'>
+          管理首页
+        </a>
+      </h4>
+    </div>
+
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          本站权限管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="role_list.html" target='main'>角色列表</a></li>
+            <li role="presentation"><a href="#">添加角色</a></li>
+            <li role="presentation"><a href="#">权限设置</a></li>
+            <li role="presentation"><a href="#">角色回收站</a></li>
+        </ul>
+       
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+         商品管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+             <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="good_list.html" target='main'>商品列表</a></li>
+            <li role="presentation"><a href="add_good.html" target='main'>添加商品</a></li>
+            <li role="presentation"><a href="add_good.html" target='main'>商品等级管理</a></li>
+             <li role="presentation"><a href="add_good.html" target='main'>商品类别管理</a></li>
+            <li role="presentation"><a href="#">商品回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          网站管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="website_list.html" target='main'>网站列表</a></li>
+            <li role="presentation"><a href="add_website.html" target='main'>添加网站</a></li>
+            <li role="presentation"><a href="#">网站回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          订单管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="order_list.html" target='main'>订单列表</a></li>
+            <li role="presentation"><a href="#">订单回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          员工管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="employee_list.html" target='main'>员工列表</a></li>
+            <li role="presentation"><a href="#">员工回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+          仓库管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="store_list.html" target='main'>仓库列表</a></li>
+            <li role="presentation"><a href="#">添加仓库</a></li>
+             <li role="presentation"><a href="#">仓库回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+          素材管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="store_list.html" target='main'>素材列表</a></li>
+            <li role="presentation"><a href="#">上传素材</a></li>
+            <li role="presentation"><a href="#">素材回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+          物流管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="store_list.html" target='main'>仓库地址管理</a></li>
+            <li role="presentation"><a href="#">送货范围管理</a></li>
+            <li role="presentation"><a href="#">送货费用管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+        <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+            文章管理
+        </a>
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse">
+      <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="store_list.html" target='main'>文章列表</a></li>
+            <li role="presentation"><a href="#">添加文章</a></li>
+            <li role="presentation"><a href="#">文章回收站</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+        <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a   href="personal_info.html" target='main'>
+          个人信息管理
+        </a>
+      </h4>
+    </div>
+  </div>        <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a   href="sitesetting.html" target='main'>
+          本站设置
+        </a>
+      </h4>
+    </div>
+  </div>
+</div>
+</div>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<div id='main' ><iframe src='main.html' width='100%' height='600' name='main' frameborder='0' /></div>
+</body>
+ 
+</html>
+

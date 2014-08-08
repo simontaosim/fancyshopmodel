@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>欢迎进入系统</title>
+<link href='index.css' />
+
+</head>
+<body>
+<div id='top'>
+</div>
+<div id='left'><ul>
+<li>管理首页</li>
+<li>本站权限管理</li>
+<li>商品管理</li>
+<li>网站管理</li>
+<li>订单管理</li>
+<li>员工管理</li>
+<li>仓库管理</li>
+<li>回收站管理</li>
+<li>本站信息管理</li>
+<li>素材管理</li>
+<li>物流管理</li>
+<li>个人信息管理</li>
+<li>本站设置</li>
+</ul></div>
+<div id='main'><iframe src='main.html' width='100%'  /></div>
+</body>
+</html>

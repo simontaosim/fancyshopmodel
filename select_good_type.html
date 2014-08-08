@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>orders</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='index.css' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div>
+        <ul class="nav nav-pills" role="tablist">
+  <li role="presentation" ><a href="#">选择上架区域》》》</a></li>
+  <li role="presentation" class="active"><a href="#">选择产品类别》》》</a></li>
+  <li role="presentation"><a href="#">上传图片》》》</a></li>
+  <li role="presentation"><a href="#">填写其他信息》》》</a></li>
+   <li role="presentation"><a href="#">完成</a></li>
+</ul>
+        
+    </div><br><br>
+    <div class='container' id='selectArea'>
+      <select class="form-control goodtype" id='wholetype'>
+          <option>--请选择主分类--</option>
+  <option>家用电器</option>
+  <option>手机数码</option>
+  <option>电脑办公</option>
+  <option>家居、家具、家装、厨具</option>
+  <option>服装、内衣、珠宝、首饰</option>
+  <option>鞋靴、箱包、钟表</option>
+  <option>运动户外</option>
+  <option>汽车用品</option>
+  <option>食品饮料、酒类</option>
+  <option>母婴</option>
+</select>
+
+    </div>
+    <br><br>
+ <div class='container'>
+  <div class='text-primary'><span>分类：</span></div><br>
+    <a href='add_good.html' class='btn btn-default'>上一步</a>
+    <a href='select_good_type.html' class='btn btn-default'>下一步</a>
+ </div>
+   </div>
+   
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $(".goodtype").on('change',function(){
+             
+              textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>";
+              $('.text-primary').html(textshow);
+              subtype1="";
+              subtype1+="<select class='form-control goodtype' id='subtype1'>";
+              subtype1+="<option>--请选择家用电器的子分类--</option>";
+              subtype1+="<option>大家电</option>";
+              subtype1+="<option>生活电器</option>";
+              subtype1+="<option>厨房电器</option>";
+              subtype1+="<option>个护健康</option>";
+              subtype1+="<option>五金家装</option>";
+              subtype1+='</select>';
+              subtype2="";
+              subtype2+="<select class='form-control goodtype' id='subtype2'>";
+              subtype2+="<option>--请选择手机数码的子分类--</option>";
+              subtype2+="<option>手机通讯</option>";
+              subtype2+="<option>摄影摄像</option>";
+              subtype2+="<option>数码配件</option>";
+              subtype2+="<option>智能设备</option>";
+              subtype2+="<option>时尚影音</option>";
+              subtype2+="<option>电子教育</option>";
+              subtype2+='</select>';
+              subtype3="";
+              subtype3+="<select class='form-control goodtype' id='subtype3'>";
+              subtype3+="<option>--请选择电脑办公的子分类--</option>";
+              subtype3+="<option>电脑整机</option>";
+              subtype3+="<option>电脑配件</option>";
+              subtype3+="<option>网络产品</option>";
+              subtype3+="<option>外设产品</option>";
+              subtype3+="<option>办公打印</option>";
+              subtype3+='</select>';
+              subtype4="";
+              subtype4+="<select class='form-control goodtype' id='subtype4'>";
+              subtype4+="<option>--请选择家居、家具、家装、厨具的子分类--</option>";
+               subtype4+="<option>厨具</option>";
+              subtype4+="<option>家纺</option>";
+              subtype4+="<option>家具</option>";
+              subtype4+="<option>灯具</option>";
+              subtype4+="<option>生活用品</option>";
+              subtype4+="<option>家装装饰</option>";
+              subtype4+="<option>清洁用品</option>";
+              subtype5="";
+              subtype5+="<select class='form-control goodtype' id='subtype5'>";
+              subtype5+="<option>--请选择家服装、内衣、珠宝、首饰的子分类--</option>";
+              subtype5+="<option>女装</option>";
+              subtype5+="<option>男装</option>";
+              subtype5+="<option>内衣</option>";
+              subtype5+="<option>服饰配件</option>";
+              subtype5+='</select>';
+              
+              subtype6="";
+              subtype6+="<select class='form-control goodtype' id='subtype6'>";
+              subtype6+="<option>--请选择鞋靴、箱包、钟表的子分类--</option>";
+              subtype6+="<option>时尚女鞋</option>";
+              subtype6+="<option>流行男鞋</option>";
+              subtype6+="<option>潮流女包</option>";
+              subtype6+="<option>精品男包</option>";
+               subtype6+="<option>功能箱包</option>";
+              subtype6+='</select>';
+              
+              subtype7="";
+              subtype7+="<select class='form-control goodtype' id='subtype7'>";
+              subtype7+="<option>--请选择运动户外的子分类--</option>";
+              subtype7+="<option>运动鞋包</option>";
+              subtype7+="<option>运动服饰</option>";
+              subtype7+="<option>健身训练</option>";
+              subtype7+="<option>骑行运动</option>";
+               subtype7+="<option>体育用品</option>";
+               subtype7+="<option>户外装备</option>";
+                subtype7+="<option>垂钓用品</option>";
+                 subtype7+="<option>游泳用品</option>";
+              subtype7+='</select>';
+              
+               subtype8="";
+              subtype8+="<select class='form-control goodtype' id='subtype8'>";
+              subtype8+="<option>--请选择汽车用品的子分类--</option>";
+              subtype8+="<option>维修保养</option>";
+              subtype8+="<option>车载电器</option>";
+              subtype8+="<option>美容清洁</option>";
+              subtype8+="<option>汽车装饰</option>";
+               subtype8+="<option>安全自驾</option>";
+              subtype8+='</select>';
+              
+              subtype9="";
+              subtype9+="<select class='form-control goodtype' id='subtype9'>";
+              subtype9+="<option>--请选择母婴的子分类--</option>";
+              subtype9+="<option> 奶粉</option>";
+              subtype9+="<option>营养辅食</option>";
+              subtype9+="<option>洗护用品</option>";
+              subtype9+="<option>喂养用品</option>";
+              subtype9+="<option>童车童床</option>";
+              subtype9+="<option>安全座椅/option>";
+              subtype9+='</select>';
+              
+              subtype10="";
+              subtype10+="<select class='form-control goodtype' id='subtype10'>";
+              subtype10+="<option>--请选择食品饮料、酒类的子分类--</option>";
+              subtype10+="<option>中外名酒</option>";
+              subtype10+="<option>休闲食品</option>";
+              subtype10+="<option>饮料冲调</option>";
+              subtype10+="<option>粮油调料</option>";
+              subtype10+="<option>茗茶</option>";
+              subtype10+='</select>';
+              
+              if ($(this).find('option:selected').text()=='家用电器') {
+                 $("#selectArea").append(subtype1);
+                 $('#subtype2').remove();
+                 $('#subtype3').remove();
+                  $('#subtype4').remove();
+                   $('#subtype5').remove(); $('#subtype6').remove();
+                   $('#subtype7').remove();  $('#subtype8').remove();
+                     $('#subtype9').remove();$('#subtype10').remove();
+                     $(".subsubtype").remove();
+              }
+              if ($(this).find('option:selected').text()=='手机数码') {
+                 $("#selectArea").append(subtype2);
+                $('#subtype1').remove();
+                $('#subtype3').remove();
+                $('#subtype4').remove();
+                  $('#subtype5').remove(); $('#subtype6').remove();
+                  $('#subtype7').remove();  $('#subtype8').remove();
+                    $('#subtype9').remove();$('#subtype10').remove();
+                     $(".subsubtype").remove();
+                 
+              }
+               if ($(this).find('option:selected').text()=='电脑办公') {
+                 $("#selectArea").append(subtype3);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                $('#subtype4').remove();
+                  $('#subtype5').remove(); $('#subtype6').remove();
+                  $('#subtype7').remove();  $('#subtype8').remove();
+                    $('#subtype9').remove();$('#subtype10').remove();
+                     $(".subsubtype").remove();
+                 
+              }
+              if ($(this).find('option:selected').text()=='家居、家具、家装、厨具') {
+                 $("#selectArea").append(subtype4);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype5').remove(); $('#subtype6').remove();
+                 $('#subtype7').remove();  $('#subtype8').remove();
+                   $('#subtype9').remove();$('#subtype10').remove();
+                    $(".subsubtype").remove();
+                 
+              }
+              
+                if ($(this).find('option:selected').text()=='服装、内衣、珠宝、首饰') {
+                 $("#selectArea").append(subtype5);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype6').remove();
+                  $('#subtype7').remove();
+                    $('#subtype8').remove();
+                      $('#subtype9').remove();
+                      $('#subtype10').remove();
+                       $(".subsubtype").remove();
+                 
+              }
+              
+                if ($(this).find('option:selected').text()=='鞋靴、箱包、钟表') {
+                 $("#selectArea").append(subtype6);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype5').remove();
+                  $('#subtype7').remove();
+                    $('#subtype8').remove();  $('#subtype9').remove();
+                    $('#subtype10').remove();  $(".subsubtype").remove();
+                 
+              }
+              
+               if ($(this).find('option:selected').text()=='运动户外') {
+                 $("#selectArea").append(subtype7);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype5').remove();
+                  $('#subtype6').remove();
+                  $('#subtype8').remove();  $('#subtype9').remove();
+                  $('#subtype10').remove();
+                   $(".subsubtype").remove();
+                 
+              }
+                if ($(this).find('option:selected').text()=='汽车用品') {
+                 $("#selectArea").append(subtype8);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype5').remove();
+                  $('#subtype6').remove();
+                  $('#subtype7').remove();
+                  $('#subtype9').remove();
+                  $('#subtype10').remove();
+                   $(".subsubtype").remove();
+                 
+              }
+                 if ($(this).find('option:selected').text()=='母婴') {
+                 $("#selectArea").append(subtype9);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype5').remove();
+                  $('#subtype6').remove();
+                  $('#subtype7').remove();
+                  $('#subtype8').remove();
+                  $('#subtype10').remove();
+                   $(".subsubtype").remove();
+                 
+              }
+                 if ($(this).find('option:selected').text()=='食品饮料、酒类') {
+                 $("#selectArea").append(subtype10);
+                $('#subtype1').remove();
+                $('#subtype2').remove();
+                 $('#subtype3').remove();
+                 $('#subtype4').remove();
+                  $('#subtype5').remove();
+                  $('#subtype6').remove();
+                  $('#subtype7').remove();
+                  $('#subtype8').remove();
+                  $('#subtype9').remove();
+                   $(".subsubtype").remove();
+                 
+              }
+            
+              $("#subtype1").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub1subtype1="";
+              sub1subtype1+="<select class='form-control goodtype subsubtype' id='sub1subtype1'>";
+              sub1subtype1+="<option>--请选择大家电的子分类--</option>";
+              sub1subtype1+="<option>平板电视</option>";
+              sub1subtype1+="<option>空调</option>";
+              sub1subtype1+="<option>冰箱</option>";
+              sub1subtype1+="<option>洗衣机</option>";
+              sub1subtype1+="<option>家庭影院</option>";
+              sub1subtype1+="<option>迷你音响</option>";
+              sub1subtype1+="<option>热水器</option>";
+              sub1subtype1+="<option>消毒柜/洗碗机</option>";
+              sub1subtype1+="<option>家电配件</option>";
+              sub1subtype1+='</select>';
+              
+              sub1subtype2="";
+              sub1subtype2+="<select class='form-control goodtype subsubtype' id='sub1subtype2'>";
+              sub1subtype2+="<option>--请选择生活电器的子分类--</option>";
+              sub1subtype2+="<option>电风扇</option>";
+              sub1subtype2+="<option>冷风扇</option>";
+              sub1subtype2+="<option>冰箱</option>";
+              sub1subtype2+="<option>净化器</option>";
+              sub1subtype2+="<option>饮水机</option>";
+              sub1subtype2+="<option>净水设备</option>";
+              sub1subtype2+="<option>挂烫机/烫斗</option>";
+              sub1subtype2+="<option>吸尘器</option>";
+              sub1subtype2+="<option>电话机</option>";
+              sub1subtype2+="<option>插座</option>";
+              sub1subtype2+="<option>收录/音机</option>";
+              sub1subtype2+="<option>清洁机</option>";
+              sub1subtype2+="<option>加湿器</option>";
+              sub1subtype2+="<option>取暖电器</option>";
+              sub1subtype2+="<option>其他生活电器</option>";
+              sub1subtype2+='</select>';
+              
+              sub1subtype3="";
+              sub1subtype3+="<select class='form-control goodtype subsubtype' id='sub1subtype3'>";
+              sub1subtype3+="<option>--请选择厨房电器的子分类--</option>";
+              sub1subtype3+="<option>电压力锅</option>";
+              sub1subtype3+="<option>电饭煲</option>";
+              sub1subtype3+="<option>豆浆机</option>";
+              sub1subtype3+="<option>面包机</option>";
+              sub1subtype3+="<option>咖啡机</option>";
+              sub1subtype3+="<option>迷你音响</option>";
+              sub1subtype3+="<option>微波炉</option>";
+              sub1subtype3+="<option>料理/榨汁机</option>";
+              sub1subtype3+="<option>电烤箱</option>";
+              sub1subtype3+="<option>电磁炉</option>";
+              sub1subtype3+="<option>煮蛋器</option>";
+              sub1subtype3+="<option>豆浆机</option>";
+              sub1subtype3+="<option>酸奶机</option>";
+              sub1subtype3+="<option>电水壶/热水瓶</option>";
+              sub1subtype3+="<option>电炖锅</option>";
+              sub1subtype3+="<option>果蔬解毒机</option>";
+              sub1subtype3+="<option>其他厨房电器</option>";
+              sub1subtype3+='</select>';
+              
+              sub1subtype4="";
+              sub1subtype4+="<select class='form-control goodtype subsubtype' id='sub1subtype4'>";
+              sub1subtype4+="<option>--请选择个护健康的子分类--</option>";
+              sub1subtype4+="<option>剃须刀</option>";
+              sub1subtype4+="<option>剃/脱毛器</option>";
+              sub1subtype4+="<option>口腔护理</option>";
+              sub1subtype4+="<option>面包机</option>";
+              sub1subtype4+="<option>电吹风</option>";
+              sub1subtype4+="<option>美容</option>";
+              sub1subtype4+="<option>美发</option>";
+              sub1subtype4+="<option>按摩器</option>";
+              sub1subtype4+="<option>按摩椅</option>";
+              sub1subtype4+="<option>足浴盆</option>";
+              sub1subtype4+="<option>血压计</option>";
+              sub1subtype4+="<option>健康秤/厨房秤</option>";
+              sub1subtype4+="<option>血糖仪</option>";
+              sub1subtype4+="<option>体温计</option>";
+              sub1subtype4+="<option>计步器</option>";
+              sub1subtype4+="<option>其他健康电器</option>";
+              sub1subtype4+='</select>';
+              
+              sub1subtype5="";
+              sub1subtype5+="<select class='form-control goodtype subsubtype' id='sub1subtype5'>";
+              sub1subtype5+="<option>--请选择五金家装的子分类--</option>";
+              sub1subtype5+="<option>电动工具</option>";
+              sub1subtype5+="<option>手动工具</option>";
+              sub1subtype5+="<option>仪器仪表</option>";
+              sub1subtype5+="<option>灯具</option>";
+              sub1subtype5+="<option>LED灯</option>";
+              sub1subtype5+="<option>洁身器</option>";
+              sub1subtype5+="<option>水槽</option>";
+              sub1subtype5+="<option>龙头</option>";
+              sub1subtype5+="<option>沐浴花洒</option>";
+              sub1subtype5+="<option>厨卫五金</option>";
+              sub1subtype5+="<option>电气开关</option>";
+              sub1subtype5+="<option>插座</option>";
+              sub1subtype5+="<option>电工电料</option>";
+              sub1subtype5+="<option>监控安防</option>";
+              sub1subtype5+="<option>电线/电缆</option>";
+              sub1subtype5+='</select>';
+              
+              
+                  if ($(this).find('option:selected').text()=='大家电') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub1subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='生活电器') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub1subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='厨房电器') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub1subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='个护健康') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub1subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='五金家装') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub1subtype5);  
+                  }
+                    $("#sub1subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype1').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub1subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype1').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub1subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype1').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub1subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype1').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub1subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype1').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+              });
+              
+              $("#subtype2").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub2subtype1="";
+              sub2subtype1+="<select class='form-control goodtype subsubtype' id='sub2subtype1'>";
+              sub2subtype1+="<option>--请选择手机通讯的子分类--</option>";
+              sub2subtype1+="<option>手机</option>";
+              sub2subtype1+="<option>对讲机</option>";
+              sub2subtype1+='</select>';
+              
+              sub2subtype2="";
+              sub2subtype2+="<select class='form-control goodtype subsubtype' id='sub2subtype2'>";
+              sub2subtype2+="<option>--请选择手机配件的子分类--</option>";
+              sub2subtype2+="<option>电池</option>";
+              sub2subtype2+="<option>蓝牙耳机</option>";
+              sub2subtype2+="<option>充电器/数据线</option>";
+              sub2subtype2+="<option>手机耳机</option>";
+              sub2subtype2+="<option>贴膜</option>";
+              sub2subtype2+="<option>存储卡</option>";
+              sub2subtype2+="<option>车载</option>";
+              sub2subtype2+="<option>iPhone配件</option>";
+              sub2subtype2+="<option>创意配件</option>";
+              sub2subtype2+="<option>便捷/无线音箱</option>";
+              sub2subtype2+="<option>手机饰品</option>";
+              sub2subtype2+='</select>';
+              
+              sub2subtype3="";
+              sub2subtype3+="<select class='form-control goodtype subsubtype' id='sub2subtype3'>";
+              sub2subtype3+="<option>--请选择摄影摄像的子分类--</option>";
+              sub2subtype3+="<option>数码相机</option>";
+              sub2subtype3+="<option>单电/微单相机</option>";
+              sub2subtype3+="<option>单反相机</option>";
+              sub2subtype3+="<option>拍立得</option>";
+              sub2subtype3+="<option>运动相机</option>";
+              sub2subtype3+="<option>镜头</option>";
+              sub2subtype3+="<option>户外器材</option>";
+              sub2subtype3+="<option>摄影器材</option>";
+              sub2subtype3+='</select>';
+              
+              sub2subtype4="";
+              sub2subtype4+="<select class='form-control goodtype subsubtype' id='sub2subtype4'>";
+              sub2subtype4+="<option>--请选择数码配件的子分类--</option>";
+              sub2subtype4+="<option>存储卡</option>";
+              sub2subtype4+="<option>读卡器</option>";
+              sub2subtype4+="<option>滤镜</option>";
+              sub2subtype4+="<option>闪光灯/手柄</option>";
+              sub2subtype4+="<option>相机包</option>";
+              sub2subtype4+="<option>三脚架/云台</option>";
+              sub2subtype4+="<option>相机清洁</option>";
+              sub2subtype4+="<option>相机贴膜</option>";
+              sub2subtype4+="<option>机身附件</option>";
+              sub2subtype4+="<option>镜头附件</option>";
+              sub2subtype4+="<option>电池/充电器</option>";
+              sub2subtype4+='</select>';
+              
+              sub2subtype5="";
+              sub2subtype5+="<select class='form-control goodtype subsubtype' id='sub2subtype5'>";
+              sub2subtype5+="<option>--请选择智能设备的子分类--</option>";
+              sub2subtype5+="<option>智能手环</option>";
+              sub2subtype5+="<option>智能手表</option>";
+              sub2subtype5+="<option>智能眼镜</option>";
+              sub2subtype5+="<option>运动跟踪器</option>";
+              sub2subtype5+="<option>健康监测</option>";
+              sub2subtype5+="<option>智能家居</option>";
+              sub2subtype5+="<option>体感车</option>";
+              sub2subtype5+="<option>其他配件</option>";
+              sub2subtype5+='</select>';
+              
+              sub2subtype6="";
+              sub2subtype6+="<select class='form-control goodtype subsubtype' id='sub2subtype6'>";
+              sub2subtype6+="<option>--请选择时尚影音的子分类--</option>";
+              sub2subtype6+="<option>耳机/耳麦</option>";
+              sub2subtype6+="<option>音箱/音响</option>";
+              sub2subtype6+="<option>麦克风</option>";
+              sub2subtype6+="<option>数码相框</option>";
+              sub2subtype6+="<option>苹果周边</option>";
+              sub2subtype6+='</select>';
+              
+              sub2subtype7="";
+              sub2subtype7+="<select class='form-control goodtype subsubtype' id='sub2subtype7'>";
+              sub2subtype7+="<option>--请选择电子教育的子分类--</option>";
+              sub2subtype7+="<option>电子词典 </option>";
+              sub2subtype7+="<option>电纸书</option>";
+              sub2subtype7+="<option>录音笔</option>";
+              sub2subtype7+="<option>复读机</option>";
+              sub2subtype7+="<option>点读机/笔s</option>";
+              sub2subtype7+='</select>';
+              
+              
+                  if ($(this).find('option:selected').text()=='手机通讯') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='手机配件') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='摄影摄像') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='数码配件') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='智能设备') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype5);  
+                  }
+                   if ($(this).find('option:selected').text()=='时尚影音') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype6);  
+                  }
+                   if ($(this).find('option:selected').text()=='电子教育') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub2subtype7);  
+                  }
+                    $("#sub2subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub2subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub2subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub2subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub2subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                         $("#sub2subtype6").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                            $("#sub2subtype7").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype2').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+              });
+              $("#subtype3").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub3subtype1="";
+              sub3subtype1+="<select class='form-control goodtype subsubtype' id='sub3subtype1'>";
+              sub3subtype1+="<option>--请选择电脑整机的子分类--</option>";
+              sub3subtype1+="<option>笔记本</option>";
+              sub3subtype1+="<option>超级本</option>";
+              sub3subtype1+="<option>游戏本</option>";
+              sub3subtype1+="<option>平板电脑</option>";
+              sub3subtype1+="<option>平板电脑配件</option>";
+              sub3subtype1+="<option>台式机s</option>";
+              sub3subtype1+="<option>服务器/工作站</option>";
+              sub3subtype1+="<option>笔记本配件</option>";
+              sub3subtype1+='</select>';
+              
+              sub3subtype2="";
+              sub3subtype2+="<select class='form-control goodtype subsubtype' id='sub3subtype2'>";
+              sub3subtype2+="<option>--请选择电脑配件的子分类--</option>";
+              sub3subtype2+="<option>CPU</option>";
+              sub3subtype2+="<option>主板</option>";
+              sub3subtype2+="<option>显卡</option>";
+              sub3subtype2+="<option>硬盘</option>";
+              sub3subtype2+="<option>SDD固态硬盘</option>";
+              sub3subtype2+="<option>内存</option>";
+              sub3subtype2+="<option>机箱</option>";
+              sub3subtype2+="<option>电源</option>";
+              sub3subtype2+="<option>显示器</option>";
+              sub3subtype2+="<option>刻录机/光驱</option>";
+              sub3subtype2+="<option>散热器</option>";
+              sub3subtype2+="<option>装机配件</option>";
+              sub3subtype2+='</select>';
+              
+              sub3subtype3="";
+              sub3subtype3+="<select class='form-control goodtype subsubtype' id='sub3subtype3'>";
+              sub3subtype3+="<option>--请选择外设产品的子分类--</option>";
+              sub3subtype3+="<option>鼠标</option>";
+              sub3subtype3+="<option>键盘</option>";
+              sub3subtype3+="<option>游戏设备</option>";
+              sub3subtype3+="<option>U盘</option>";
+              sub3subtype3+="<option>移动硬盘</option>";
+              sub3subtype3+="<option>鼠标垫</option>";
+              sub3subtype3+="<option>摄像头</option>";
+              sub3subtype3+="<option>手写板</option>";
+              sub3subtype3+="<option>电玩</option>";
+              sub3subtype3+="<option>外置盒</option>";
+              sub3subtype3+="<option>电脑工具</option>";
+              sub3subtype3+="<option>电脑清洁</option>";
+              sub3subtype3+="<option>UPS</option>";
+              sub3subtype3+="<option>插座</option>";
+              sub3subtype3+='</select>';
+              
+              sub3subtype4="";
+              sub3subtype4+="<select class='form-control goodtype subsubtype' id='sub3subtype4'>";
+              sub3subtype4+="<option>--请选择网络产品的子分类--</option>";
+              sub3subtype4+="<option>路由器</option>";
+              sub3subtype4+="<option>网卡</option>";
+              sub3subtype4+="<option>交换机</option>";
+              sub3subtype4+="<option>网络存储</option>";
+              sub3subtype4+="<option>网络盒子</option>";
+              sub3subtype4+="<option>网路配件</option>";
+              sub3subtype4+='</select>';
+              
+              sub3subtype5="";
+              sub3subtype5+="<select class='form-control goodtype subsubtype' id='sub3subtype5'>";
+              sub3subtype5+="<option>--请选择办公打印的子分类--</option>";
+              sub3subtype5+="<option>打印机</option>";
+              sub3subtype5+="<option>一体机</option>";
+              sub3subtype5+="<option>投影机</option>";
+              sub3subtype5+="<option>传真机</option>";
+              sub3subtype5+="<option>复合机</option>";
+              sub3subtype5+="<option>碎纸机</option>";
+              sub3subtype5+="<option>办公文仪</option>";
+              sub3subtype5+="<option>办公文具</option>";
+              sub3subtype5+="<option>文件管理</option>";
+              sub3subtype5+="<option>笔类</option>";
+              sub3subtype5+="<option>纸类</option>";
+              sub3subtype5+="<option>学生文具</option>";
+              sub3subtype5+="<option>计算器</option>";
+              sub3subtype5+="<option>激光笔</option>";
+              sub3subtype5+="<option>考勤机</option>";
+              sub3subtype5+="<option>白板/封装</option>";
+              sub3subtype5+="<option>支付设备/POS机</option>";
+              sub3subtype5+="<option>安防监控</option>";
+              sub3subtype5+='</select>';
+              
+                  if ($(this).find('option:selected').text()=='电脑整机') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub3subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='电脑配件') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub3subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='外设产品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub3subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='网络产品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub3subtype4);  
+                  }
+                    if ($(this).find('option:selected').text()=='办公打印') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub3subtype5);  
+                  }
+                  
+                  
+                    $("#sub3subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype3').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub3subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype3').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub3subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype3').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub3subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype3').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub3subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype3').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                   
+              });
+              $("#subtype4").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub4subtype1="";
+              sub4subtype1+="<select class='form-control goodtype subsubtype' id='sub4subtype1'>";
+              sub4subtype1+="<option>--请选择厨具的子分类--</option>";
+              sub4subtype1+="<option>烹饪锅具</option>";
+              sub4subtype1+="<option>刀剪菜板</option>";
+              sub4subtype1+="<option>厨房配件</option>";
+              sub4subtype1+="<option>水具洒具</option>";
+              sub4subtype1+="<option>餐具</option>";
+              sub4subtype1+="<option>茶具/咖啡具</option>";
+              sub4subtype1+='</select>';
+            
+              sub4subtype2="";
+              sub4subtype2+="<select class='form-control goodtype subsubtype' id='sub4subtype2'>";
+              sub4subtype2+="<option>--请选择家纺的子分类--</option>";
+              sub4subtype2+="<option>床品套件</option>";
+              sub4subtype2+="<option>被子</option>";
+              sub4subtype2+="<option>蚊帐</option>";
+              sub4subtype2+="<option>凉席</option>";
+              sub4subtype2+="<option>床单被罩</option>";
+              sub4subtype2+="<option>枕芯</option>";
+              sub4subtype2+="<option>毛巾浴巾</option>";
+              sub4subtype2+="<option>毯子</option>";
+              sub4subtype2+="<option>床垫</option>";
+              sub4subtype2+="<option>窗帘</option>";
+              sub4subtype2+="<option>电热毯</option>";
+              sub4subtype2+='</select>';
+            
+              sub4subtype3="";
+              sub4subtype3+="<select class='form-control goodtype subsubtype' id='sub4subtype3'>";
+              sub4subtype3+="<option>--请选择家具的子分类--</option>";
+              sub4subtype3+="<option>卧室家具</option>";
+              sub4subtype3+="<option>客厅家具</option>";
+              sub4subtype3+="<option>餐厅家具</option>";
+              sub4subtype3+="<option>书房家具</option>";
+              sub4subtype3+="<option>储物家具</option>";
+              sub4subtype3+="<option>商业办公</option>";
+              sub4subtype3+="<option>床</option>";
+              sub4subtype3+="<option>沙发</option>";
+              sub4subtype3+="<option>电脑椅</option>";
+              sub4subtype3+="<option>衣柜</option>";
+              sub4subtype3+="<option>茶几</option>";
+              sub4subtype3+="<option>电视柜</option>";
+              sub4subtype3+="<option>餐桌</option>";
+              sub4subtype3+="<option>电脑桌</option>";
+              sub4subtype3+="<option>鞋架/衣帽架</option>";
+              sub4subtype3+='</select>';
+            
+              sub4subtype4="";
+              sub4subtype4+="<select class='form-control goodtype subsubtype' id='sub4subtype4'>";
+              sub4subtype4+="<option>--请选择灯具的子分类--</option>";
+              sub4subtype4+="<option>台灯</option>";
+              sub4subtype4+="<option>吸顶灯</option>";
+              sub4subtype4+="<option>LED灯</option>";
+              sub4subtype4+="<option>节能灯</option>";
+              sub4subtype4+="<option>落地灯</option>";
+              sub4subtype4+="<option>五金电器</option>";
+              sub4subtype4+="<option>应急灯</option>";
+              sub4subtype4+="<option>装饰灯</option>";
+              sub4subtype4+="<option>吊灯</option>";
+              sub4subtype4+="<option>氛围灯</option>";
+              sub4subtype4+='</select>';
+              
+              sub4subtype5="";
+              sub4subtype5+="<select class='form-control goodtype subsubtype' id='sub4subtype5'>";
+              sub4subtype5+="<option>--请选择生活用品的子分类--</option>";
+              sub4subtype5+="<option>收纳用品</option>";
+              sub4subtype5+="<option>雨伞雨具</option>";
+              sub4subtype5+="<option>浴室用品</option>";
+              sub4subtype5+="<option>净化除味</option>";
+              sub4subtype5+="<option>桌布</option>";
+              sub4subtype5+='</select>';
+            
+              sub4subtype6="";
+              sub4subtype6+="<select class='form-control goodtype subsubtype' id='sub4subtype6'>";
+              sub4subtype6+="<option>--请选择家装装饰的子分类--</option>";
+              sub4subtype5+="<option>地毯地垫</option>";
+              sub4subtype5+="<option>沙发套</option>";
+              sub4subtype5+="<option>相框</option>";
+              sub4subtype5+="<option>装饰字画</option>";
+              sub4subtype5+="<option>墙贴</option>";
+              sub4subtype5+="<option>沙发套</option>";
+              sub4subtype5+="<option>节庆饰品</option>";
+              sub4subtype5+="<option>钟饰</option>";
+              sub4subtype5+="<option>装饰摆件</option>";
+              sub4subtype5+="<option>花瓶花艺</option>";
+              sub4subtype5+="<option>创意家居</option>";
+              sub4subtype5+="<option>保暖防护</option>";
+              sub4subtype5+="<option>香熏蜡烛</option>";
+              sub4subtype6+='</select>';
+              
+              sub4subtype7="";
+              sub4subtype7+="<select class='form-control goodtype subsubtype' id='sub4subtype7'>";
+              sub4subtype7+="<option>--请选择清洁用品的子分类--</option>";
+              sub4subtype7+="<option>纸品湿巾 </option>";
+              sub4subtype7+="<option>衣物清洁</option>";
+              sub4subtype7+="<option>清洁工具</option>";
+              sub4subtype7+="<option>家庭清洁</option>";
+              sub4subtype7+="<option>一次性用品</option>";
+              sub4subtype7+="<option>驱虫用品</option>";
+              sub4subtype7+="<option>皮具护理</option>";
+              sub4subtype7+='</select>';
+              
+              
+                  if ($(this).find('option:selected').text()=='厨具') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='家纺') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='家具') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='灯具') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='生活用品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype5);  
+                  }
+                   if ($(this).find('option:selected').text()=='家装装饰') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype6);  
+                  }
+                   if ($(this).find('option:selected').text()=='清洁用品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub4subtype7);  
+                  }
+                    $("#sub4subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub4subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub4subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub4subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub4subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                         $("#sub4subtype6").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                            $("#sub4subtype7").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype4').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+              });
+              $("#subtype5").on('change',function(){
+              textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub5subtype1="";
+              sub5subtype1+="<select class='form-control goodtype subsubtype' id='sub5subtype1'>";
+              sub5subtype1+="<option>--请选择女装的子分类--</option>";
+              sub5subtype1+="<option>连衣裙</option>";
+              sub5subtype1+="<option>雪纺纱</option>";
+              sub5subtype1+="<option>衬衫</option>";
+              sub5subtype1+="<option>半身裙</option>";
+              sub5subtype1+="<option>休闲裤</option>";
+              sub5subtype1+="<option>短裤</option>";
+              sub5subtype1+="<option>牛仔裤</option>";
+              sub5subtype1+="<option>针织衫</option>";
+              sub5subtype1+="<option>吊带/背心</option>";
+              sub5subtype1+="<option>打底裤</option>";
+              sub5subtype1+="<option>正装裤</option>";
+              sub5subtype1+="<option>小西服</option>";
+              sub5subtype1+="<option>马甲</option>";
+              sub5subtype1+="<option>风衣</option>";
+              sub5subtype1+="<option>羊毛衫</option>";
+              sub5subtype1+="<option>羊绒衫</option>";
+              sub5subtype1+="<option>短外套</option>";
+              sub5subtype1+="<option>棉服</option>";
+              sub5subtype1+="<option>毛呢大衣</option>";
+              sub5subtype1+="<option>棉服</option>";
+              sub5subtype1+="<option>羊绒衫</option>";
+              sub5subtype1+="<option>羊毛衫</option>";
+              sub5subtype1+="<option>卫裤/运动裤</option>";
+              sub5subtype1+="<option>加绒裤</option>";
+              sub5subtype1+="<option>设计师/潮牌</option>";
+              sub5subtype1+="<option>真皮皮衣</option>";
+              sub5subtype1+="<option>旗袍/唐装</option>";
+              sub5subtype1+="<option>礼服</option>";
+              sub5subtype1+="<option>中老年女装</option>";
+              sub5subtype1+="<option>大码女装</option>";
+              sub5subtype1+="<option>卫衣</option>";
+              sub5subtype1+='</select>';
+            
+              sub5subtype2="";
+              sub5subtype2+="<select class='form-control goodtype subsubtype' id='sub5subtype2'>";
+              sub5subtype2+="<option>--请选择男装的子分类--</option>";
+              sub5subtype2+="<option>衬衫</option>";
+              sub5subtype2+="<option>POLO衫</option>";
+              sub5subtype2+="<option>夹克</option>";
+              sub5subtype2+="<option>休闲裤</option>";
+              sub5subtype2+="<option>短裤</option>";
+              sub5subtype2+="<option>牛仔裤</option>";
+              sub5subtype2+="<option>正装裤</option>";
+              sub5subtype2+="<option>小西服</option>";
+              sub5subtype2+="<option>马甲</option>";
+              sub5subtype2+="<option>风衣</option>";
+              sub5subtype2+="<option>羊毛衫</option>";
+              sub5subtype2+="<option>羊绒衫</option>";
+              sub5subtype2+="<option>短外套</option>";
+              sub5subtype2+="<option>棉服</option>";
+              sub5subtype2+="<option>毛呢大衣</option>";
+              sub5subtype2+="<option>棉服</option>";
+              sub5subtype2+="<option>卫裤/运动裤</option>";
+              sub5subtype2+="<option>加绒裤</option>";
+              sub5subtype2+="<option>设计师/潮牌</option>";
+              sub5subtype2+="<option>真皮皮衣</option>";
+              sub5subtype2+="<option>唐装/中山装</option>";
+              sub5subtype2+="<option>工装</option>";
+              sub5subtype2+="<option>中老年男装</option>";
+              sub5subtype2+="<option>大码男装</option>";
+              sub5subtype2+="<option>卫衣</option>";
+              sub5subtype2+='</select>';
+            
+              sub5subtype3="";
+              sub5subtype3+="<select class='form-control goodtype subsubtype' id='sub5subtype3'>";
+              sub5subtype3+="<option>--请选择内衣的子分类--</option>";
+              sub5subtype3+="<option>文胸</option>";
+              sub5subtype3+="<option>睡衣</option>";
+              sub5subtype3+="<option>情侣睡衣</option>";
+              sub5subtype3+="<option>文胸套装</option>";
+              sub5subtype3+="<option>少女文胸</option>";
+              sub5subtype3+="<option>女士内裤</option>";
+              sub5subtype3+="<option>男士内裤</option>";
+              sub5subtype3+="<option>商务男袜</option>";
+              sub5subtype3+="<option>休闲棉袜</option>";
+              sub5subtype3+="<option>打底衫</option>";
+              sub5subtype3+="<option>抹胸</option>";
+              sub5subtype3+="<option>美腿袜</option>";
+              sub5subtype3+="<option>大码内衣</option>";
+              sub5subtype3+="<option>秋衣秋裤</option>";
+              sub5subtype3+="<option>保暖内衣</option>";
+              sub5subtype3+='</select>';
+            
+              sub5subtype4="";
+              sub5subtype4+="<select class='form-control goodtype subsubtype' id='sub5subtype4'>";
+              sub5subtype4+="<option>--请选择服饰配件的子分类--</option>";
+              sub5subtype4+="<option>太阳镜</option>";
+              sub5subtype4+="<option>光学镜架/镜片</option>";
+              sub5subtype4+="<option>女士丝巾/围巾/披肩</option>";
+              sub5subtype4+="<option>棒球帽</option>";
+              sub5subtype4+="<option>遮阳伞/雨伞</option>";
+              sub5subtype4+="<option>遮阳帽</option>";
+              sub5subtype4+="<option>领带/领结/领带夹</option>";
+              sub5subtype4+="<option>男士腰带</option>";
+              sub5subtype4+="<option>防晒手套</option>";
+              sub5subtype4+="<option>老花镜</option>";
+              sub5subtype4+="<option>袖扣</option>";
+              sub5subtype4+="<option>鸭舌帽</option>";
+              sub5subtype4+="<option>口罩</option>";
+              sub5subtype4+='</select>';
+              
+                  if ($(this).find('option:selected').text()=='女装') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub5subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='男装') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub5subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='内衣') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub5subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='服饰配件') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub5subtype4);  
+                  }
+               
+                   
+                    $("#sub5subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype5').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub5subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype5').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub5subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype5').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub5subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype5').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                });
+              
+               $("#subtype6").on('change',function(){
+              textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub6subtype1="";
+              sub6subtype1+="<select class='form-control goodtype subsubtype' id='sub6subtype1'>";
+              sub6subtype1+="<option>--请选择时尚女鞋的子分类--</option>";
+              sub6subtype1+="<option>凉鞋</option>";
+              sub6subtype1+="<option>单鞋</option>";
+              sub6subtype1+="<option>高跟鞋</option>";
+              sub6subtype1+="<option>坡跟鞋</option>";
+              sub6subtype1+="<option>松糕鞋</option>";
+              sub6subtype1+="<option>鱼嘴鞋</option>";
+              sub6subtype1+="<option>帆布鞋</option>";
+              sub6subtype1+="<option>商务休闲鞋</option>";
+              sub6subtype1+="<option>正装鞋</option>";
+              sub6subtype1+="<option>增高鞋</option>";
+              sub6subtype1+="<option>人字拖</option>";
+              sub6subtype1+="<option>工装鞋</option>";
+              sub6subtype1+="<option>女靴</option>";
+              sub6subtype1+="<option>传统布鞋</option>";
+              sub6subtype1+="<option>功能鞋</option>";
+              sub6subtype1+="<option>鞋配件</option>";
+              sub6subtype1+="<option>定制鞋</option>";
+              sub6subtype1+='</select>';
+          
+              sub6subtype2="";
+              sub6subtype2+="<select class='form-control goodtype subsubtype' id='sub6subtype2'>";
+              sub6subtype2+="<option>--请选择流行男鞋的子分类--</option>";
+              sub6subtype2+="<option>休闲鞋</option>";
+              sub6subtype2+="<option>凉鞋</option>";
+              sub6subtype2+="<option>帆布鞋</option>";
+              sub6subtype2+="<option>商务休闲鞋</option>";
+              sub6subtype2+="<option>正装鞋</option>";
+              sub6subtype2+="<option>增高鞋</option>";
+              sub6subtype2+="<option>人字拖</option>";
+              sub6subtype2+="<option>工装鞋</option>";
+              sub6subtype2+="<option>男靴</option>";
+              sub6subtype2+="<option>传统布鞋</option>";
+              sub6subtype2+="<option>功能鞋</option>";
+              sub6subtype2+="<option>鞋配件</option>";
+              sub6subtype2+="<option>定制鞋</option>";
+              sub6subtype2+='</select>';
+          
+              sub6subtype3="";
+              sub6subtype3+="<select class='form-control goodtype subsubtype' id='sub6subtype3'>";
+              sub6subtype3+="<option>--请选择潮流女包的子分类--</option>";
+              sub6subtype3+="<option>单肩包</option>";
+              sub6subtype3+="<option>手提包</option>";
+              sub6subtype3+="<option>斜挎包</option>";
+              sub6subtype3+="<option>双肩包</option>";
+              sub6subtype3+="<option>钱包</option>";
+              sub6subtype3+="<option>手拿包</option>";
+              sub6subtype3+="<option>卡包</option>";
+              sub6subtype3+='</select>';
+            
+              sub6subtype4="";
+              sub6subtype4+="<select class='form-control goodtype subsubtype' id='sub6subtype4'>";
+              sub6subtype4+="<option>--请选择精品男包的子分类--</option>";
+              sub6subtype4+="<option>商务公务包</option>";
+              sub6subtype4+="<option>男士手包</option>";
+              sub6subtype4+="<option>双肩包</option>";
+              sub6subtype4+="<option>钱包</option>";
+              sub6subtype4+="<option>钥匙包</option>";
+              sub6subtype4+='</select>';
+              
+              sub6subtype5="";
+              sub6subtype5+="<select class='form-control goodtype subsubtype' id='sub6subtype5'>";
+              sub6subtype5+="<option>--请选择功能箱包的子分类--</option>";
+              sub6subtype5+="<option>拉杆箱</option>";
+              sub6subtype5+="<option>旅行包</option>";
+              sub6subtype5+="<option>电脑包</option>";
+              sub6subtype5+="<option>休闲运动包</option>";
+              sub6subtype5+="<option>相机包</option>";
+              sub6subtype5+="<option>腰包/胸包</option>";
+              sub6subtype5+="<option>登山包</option>";
+              sub6subtype5+="<option>旅行配件</option>";
+              sub6subtype5+="<option>书包</option>";
+              sub6subtype5+="<option>妈咪包</option>";
+              sub6subtype5+='</select>';
+              
+                  if ($(this).find('option:selected').text()=='时尚女鞋') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub6subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='流行男鞋') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub6subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='潮流女包') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub6subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='精品男包') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub6subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='功能箱包') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub6subtype4);  
+                  }
+                   
+                    $("#sub6subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype6').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub6subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype6').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub6subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype6').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub6subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype6').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub6subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype6').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+             
+              });
+               $("#subtype7").on('change',function(){
+              textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub7subtype1="";
+              sub7subtype1+="<select class='form-control goodtype subsubtype' id='sub7subtype1'>";
+              sub7subtype1+="<option>--请选择运动鞋包的子分类--</option>";
+              sub7subtype1+="<option>休闲鞋</option>";
+              sub7subtype1+="<option>跑步鞋</option>";
+              sub7subtype1+="<option>板鞋</option>";
+              sub7subtype1+="<option>帆布鞋</option>";
+              sub7subtype1+="<option>篮球鞋</option>";
+              sub7subtype1+="<option>足球鞋</option>";
+              sub7subtype1+="<option>专项运动鞋</option>";
+              sub7subtype1+="<option>训练鞋</option>";
+              sub7subtype1+="<option>拖鞋</option>";
+              sub7subtype1+="<option>运动包</option>";
+              sub7subtype1+='</select>';
+          
+              sub7subtype2="";
+              sub7subtype2+="<select class='form-control goodtype subsubtype' id='sub7subtype2'>";
+              sub7subtype2+="<option>--请选择运动服饰的子分类--</option>";
+              sub7subtype2+="<option>卫衣/套头衫</option>";
+              sub7subtype2+="<option>毛衫</option>";
+              sub7subtype2+="<option>夹克</option>";
+              sub7subtype2+="<option>棉服</option>";
+              sub7subtype2+="<option>羽绒服</option>";
+              sub7subtype2+="<option>训练服</option>";
+              sub7subtype2+="<option>运动背心</option>";
+              sub7subtype2+="<option>运动裤</option>";
+              sub7subtype2+="<option>运动套装</option>";
+              sub7subtype2+="<option>运动配饰</option>";
+              sub7subtype2+='</select>';
+          
+              sub7subtype3="";
+              sub7subtype3+="<select class='form-control goodtype subsubtype' id='sub7subtype3'>";
+              sub7subtype3+="<option>--请选择健身训练的子分类--</option>";
+              sub7subtype3+="<option>跑步机</option>";
+              sub7subtype3+="<option>健身车</option>";
+              sub7subtype3+="<option>综合训练器</option>";
+              sub7subtype3+="<option>其他大型器械</option>";
+              sub7subtype3+="<option>哑铃</option>";
+              sub7subtype3+="<option>仰卧板</option>";
+              sub7subtype3+="<option>收腹机</option>";
+              sub7subtype3+="<option>其他中小型器材</option>";
+              sub7subtype3+="<option>武术搏击</option>";
+              sub7subtype3+="<option>运动护具</option>";
+              sub7subtype3+="<option>瑜伽舞蹈</option>";
+              sub7subtype3+='</select>';
+            
+              sub7subtype4="";
+              sub7subtype4+="<select class='form-control goodtype subsubtype' id='sub7subtype4'>";
+              sub7subtype4+="<option>--请选择骑行运动的子分类--</option>";
+              sub7subtype4+="<option>山地车</option>";
+              sub7subtype4+="<option>折叠车</option>";
+              sub7subtype4+="<option>电动车</option>";
+              sub7subtype4+="<option>其他整车</option>";
+              sub7subtype4+="<option>骑行装备</option>";
+              sub7subtype4+="<option>骑行服</option>";
+              sub7subtype4+='</select>';
+              
+              sub7subtype5="";
+              sub7subtype5+="<select class='form-control goodtype subsubtype' id='sub7subtype5'>";
+              sub7subtype5+="<option>--请选择体育用品的子分类--</option>";
+              sub7subtype5+="<option>乒乓球</option>";
+              sub7subtype5+="<option>羽毛球</option>";
+              sub7subtype5+="<option>网球</option>";
+              sub7subtype5+="<option>篮球</option>";
+              sub7subtype5+="<option>足球</option>";
+              sub7subtype5+="<option>高尔夫</option>";
+              sub7subtype5+="<option>台球</option>";
+              sub7subtype5+="<option>轮滑滑板</option>";
+              sub7subtype5+="<option>排球</option>";
+              sub7subtype5+="<option>其他</option>";
+              sub7subtype5+='</select>';
+              
+              sub7subtype6="";
+              sub7subtype6+="<select class='form-control goodtype subsubtype' id='sub7subtype6'>";
+              sub7subtype6+="<option>--请选择户外装备的子分类--</option>";
+              sub7subtype6+="<option>背包</option>";
+              sub7subtype6+="<option>帐篷/垫子</option>";
+              sub7subtype6+="<option>睡袋/吊床</option>";
+              sub7subtype6+="<option>登山攀岩</option>";
+              sub7subtype6+="<option>户外照明</option>";
+              sub7subtype6+="<option>野餐烧烤</option>";
+              sub7subtype6+="<option>便捷座椅床</option>";
+              sub7subtype6+="<option>户外工具</option>";
+              sub7subtype6+="<option>望远镜</option>";
+              sub7subtype6+="<option>户外仪表</option>";
+              sub7subtype6+="<option>旅游用品</option>";
+              sub7subtype6+="<option>军迷用品</option>";
+              sub7subtype6+="<option>救援装备</option>";
+              sub7subtype6+="<option>滑雪装备</option>";
+              sub7subtype6+="<option>极限户外</option>";
+              sub7subtype6+="<option>冲浪潜水</option>";
+              sub7subtype6+="<option>户外配饰</option>";
+              sub7subtype6+='</select>';
+              
+              sub7subtype7="";
+              sub7subtype7+="<select class='form-control goodtype subsubtype' id='sub7subtype7'>";
+              sub7subtype7+="<option>--请选择垂钓用品的子分类--</option>";
+              sub7subtype7+="<option>鱼竿鱼线</option>";
+              sub7subtype7+="<option>钓鱼桌椅</option>";
+              sub7subtype7+="<option>钓鱼配件</option>";
+              sub7subtype7+="<option>钓箱鱼包</option>";
+              sub7subtype7+="<option>其他</option>";
+              sub7subtype7+='</select>';
+              
+              sub7subtype8="";
+              sub7subtype8+="<select class='form-control goodtype subsubtype' id='sub7subtype8'>";
+              sub7subtype8+="<option>--请选择游泳用品的子分类--</option>";
+              sub7subtype8+="<option>泳镜</option>";
+              sub7subtype8+="<option>泳帽</option>";
+              sub7subtype8+="<option>游泳包防水包</option>";
+              sub7subtype8+="<option>男士泳衣</option>";
+              sub7subtype8+="<option>女士泳衣</option>";
+              sub7subtype8+="<option>比基尼</option>";
+              sub7subtype8+="<option>其他</option>";
+              sub7subtype8+='</select>';
+              
+              
+                  if ($(this).find('option:selected').text()=='运动鞋包') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='运动服饰') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='健身训练') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='骑行运动') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='体育用品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype5);  
+                  }
+                    if ($(this).find('option:selected').text()=='户外装备') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype6);  
+                  }
+                    if ($(this).find('option:selected').text()=='垂钓用品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype7);  
+                  }
+                   if ($(this).find('option:selected').text()=='游泳用品') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub7subtype8);  
+                  }
+                   
+                   
+                    $("#sub7subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub7subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub7subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub7subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub7subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                         $("#sub7subtype6").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                          $("#sub7subtype7").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                           $("#sub7subtype8").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype7').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                           
+             
+              });
+               
+                $("#subtype8").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              sub8subtype1="";
+              sub8subtype1+="<select class='form-control goodtype subsubtype' id='sub8subtype1'>";
+              sub8subtype1+="<option>--请选择维修保养的子分类--</option>";
+              sub8subtype1+="<option>润滑油</option>";
+              sub8subtype1+="<option>添加剂</option>";
+              sub8subtype1+="<option>防冻液</option>";
+              sub8subtype1+="<option>滤清器</option>";
+              sub8subtype1+="<option>火花塞</option>";
+              sub8subtype1+="<option>雨刷</option>";
+              sub8subtype1+="<option>车灯</option>";
+              sub8subtype1+="<option>后视镜</option>";
+              sub8subtype1+="<option>轮胎</option>";
+              sub8subtype1+="<option>刹车片</option>";
+              sub8subtype1+="<option>喇叭/皮带</option>";
+              sub8subtype1+="<option>蓄电池</option>";
+              sub8subtype1+="<option>地盘装甲/护板</option>";
+              sub8subtype1+="<option>贴膜</option>";
+              sub8subtype1+="<option>汽修工具</option>";
+              sub8subtype1+='</select>';
+              
+              sub8subtype2="";
+              sub8subtype2+="<select class='form-control goodtype subsubtype' id='sub8subtype2'>";
+              sub8subtype2+="<option>--请选择车载电器的子分类--</option>";
+              sub8subtype2+="<option>导航仪</option>";
+              sub8subtype2+="<option>安全预警仪</option>";
+              sub8subtype2+="<option>行车记录仪</option>";
+              sub8subtype2+="<option>倒车雷达</option>";
+              sub8subtype2+="<option>蓝牙仪器</option>";
+              sub8subtype2+="<option>时尚影音</option>";
+              sub8subtype2+="<option>净化器</option>";
+              sub8subtype2+="<option>电源</option>";
+              sub8subtype2+="<option>冰箱</option>";
+              sub8subtype2+="<option>吸尘器</option>";
+              sub8subtype2+='</select>';
+              
+              sub8subtype3="";
+              sub8subtype3+="<select class='form-control goodtype subsubtype' id='sub8subtype3'>";
+              sub8subtype3+="<option>--请选择美容清洁的子分类--</option>";
+              sub8subtype3+="<option>车蜡</option>";
+              sub8subtype3+="<option>补漆笔</option>";
+              sub8subtype3+="<option>玻璃水</option>";
+              sub8subtype3+="<option>清洁剂</option>";
+              sub8subtype3+="<option>洗车工具</option>";
+              sub8subtype3+="<option>汽车配件</option>";
+              sub8subtype3+='</select>';
+              
+              sub8subtype4="";
+              sub8subtype4+="<select class='form-control goodtype subsubtype' id='sub8subtype4'>";
+              sub8subtype4+="<option>--请选择汽车装饰的子分类--</option>";
+              sub8subtype4+="<option>脚垫</option>";
+              sub8subtype4+="<option>坐垫</option>";
+              sub8subtype4+="<option>座套</option>";
+              sub8subtype4+="<option>后备箱垫</option>";
+              sub8subtype4+="<option>香水</option>";
+              sub8subtype4+="<option>空气净化</option>";
+              sub8subtype4+="<option>车内饰品</option>";
+              sub8subtype4+="<option>功能小件</option>";
+              sub8subtype4+="<option>车身装饰品</option>";
+              sub8subtype4+="<option>车衣</option>";
+              sub8subtype4+='</select>';
+              
+              sub8subtype5="";
+              sub8subtype5+="<select class='form-control goodtype subsubtype' id='sub8subtype5'>";
+              sub8subtype5+="<option>--请选择安全自驾的子分类--</option>";
+              sub8subtype5+="<option>安全座椅</option>";
+              sub8subtype5+="<option>胎压充气</option>";
+              sub8subtype5+="<option>防盗设备</option>";
+              sub8subtype5+="<option>应急救援</option>";
+              sub8subtype5+="<option>保温箱</option>";
+              sub8subtype5+="<option>储物箱</option>";
+              sub8subtype5+="<option>摩托车装备</option>";
+              sub8subtype5+='</select>';
+              
+              
+                  if ($(this).find('option:selected').text()=='维修保养') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub8subtype1);  
+                  }
+                  if ($(this).find('option:selected').text()=='车载电器') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub8subtype2);  
+                  }
+                   if ($(this).find('option:selected').text()=='美容清洁') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub8subtype3);  
+                  }
+                   if ($(this).find('option:selected').text()=='汽车装饰') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub8subtype4);  
+                  }
+                   if ($(this).find('option:selected').text()=='安全自驾') {
+                     $(".subsubtype").remove();
+                     $("#selectArea").append(sub8subtype5);  
+                  }
+                    $("#sub8subtype1").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype8').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                     $("#sub8subtype2").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype8').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                       $("#sub8subtype3").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype8').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub8subtype4").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype8').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+                        $("#sub8subtype5").on('change',function(){
+                       textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+'<span>'+$('#subtype8').find('option:selected').text()+'=></span>'+"<span>"+$(this).find('option:selected').text()+"</span>";
+                        $('.text-primary').html(textshow);
+                    });
+              });
+                $("#subtype9").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              });
+                
+                  $("#subtype10").on('change',function(){
+                textshow="<span>分类：</span><span>"+$('#wholetype').find('option:selected').text()+"=></span>"+"<span>"+$(this).find('option:selected').text()+"=></span>";
+                $('.text-primary').html(textshow);
+              });
+              
+              
+              });
+            });
+    
+    </script>
+</body>
+</html>

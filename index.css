@@ -1,0 +1,11 @@
+#left{
+    float:left;
+    width:15%;
+    }
+#main{
+    float: left;
+    width: 85%;
+    position: relative;
+    top:0px;
+    
+}
