@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>pc端模板</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='index.css' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#">安装新模板</a></li>
+  <li role="presentation"><a href="#">安装新皮肤</a></li>
+  <li role="presentation"><a href="#">我的模板</a></li>
+  <li role="presentation"><a href="#">我的皮肤</a></li>
+</ul>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.list-group-item').click(function(){
+                $('.list-group-item').removeClass('active');
+                $('.list-group-item').children('p').children('span').removeClass('glyphicon');
+                 $('.list-group-item').children('p').children('span').removeClass('glyphicon-ok');
+                $(this).addClass('active');
+                $(this).children('p').children('span').addClass('glyphicon');
+                $(this).children('p').children('span').addClass('glyphicon-ok');
+                 $(this).children('p').children('span').css('float','right');
+                });
+            });
+    </script>
+</body>
+</html>

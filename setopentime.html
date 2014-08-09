@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>更改网站对外显示时间</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='index.css' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<form class="form-inline" role="form">
+  <div class="form-group">
+  <label for="selectbegintime">从今日</label>
+    <select class="form-control" id="selectbegintime">
+  <option>选择开始时间</option>
+  <option>00:00</option>
+  <option>01:00</option>
+  <option>02:00</option>
+  <option>03:00</option>
+  <option>04:00</option>
+  <option>05:00</option>
+  <option>06:00</option>
+  <option>07:00</option>
+  <option>08:00</option>
+  <option>09:00</option>
+  <option>10:00</option>
+  <option>11:00</option>
+  <option>12:00</option>
+  <option>13:00</option>
+  <option>14:00</option>
+  <option>15:00</option>
+  <option>16:00</option>
+  <option>17:00</option>
+  <option>18:00</option>
+  <option>19:00</option>
+  <option>20:00</option>
+  <option>21:00</option>
+  <option>22:00</option>
+  <option>23:00</option>
+</select>
+  </div>
+  <div class="form-group">
+   <label for="selectbegintime">到次日</label>
+    <select class="form-control" id="selectendtime">
+  <option>选择结束时间</option>
+  <option>00:00</option>
+  <option>01:00</option>
+  <option>02:00</option>
+  <option>03:00</option>
+  <option>04:00</option>
+  <option>05:00</option>
+  <option>06:00</option>
+  <option>07:00</option>
+  <option>08:00</option>
+  <option>09:00</option>
+  <option>10:00</option>
+  <option>11:00</option>
+  <option>12:00</option>
+  <option>13:00</option>
+  <option>14:00</option>
+  <option>15:00</option>
+  <option>16:00</option>
+  <option>17:00</option>
+  <option>18:00</option>
+  <option>19:00</option>
+  <option>20:00</option>
+  <option>21:00</option>
+  <option>22:00</option>
+  <option>23:00</option>
+</select>
+  </div>
+
+  <button type="submit" class="btn btn-default">设置</button>
+</form>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.list-group-item').click(function(){
+                $('.list-group-item').removeClass('active');
+                $('.list-group-item').children('p').children('span').removeClass('glyphicon');
+                 $('.list-group-item').children('p').children('span').removeClass('glyphicon-ok');
+                $(this).addClass('active');
+                $(this).children('p').children('span').addClass('glyphicon');
+                $(this).children('p').children('span').addClass('glyphicon-ok');
+                 $(this).children('p').children('span').css('float','right');
+                });
+            });
+    </script>
+</body>
+</html>
